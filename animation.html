@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            font-size: large;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: chocolate;
+        }
+        .blinkText{
+            animation: blinkText 0.5s alternate infinite;
+        }
+        .scrollText {
+            animation: scrollText 5s linear infinite;
+            white-space: nowrap;
+        }
+        @keyframes scrollText{
+            0%{
+                transform: translateX(100%);
+            }
+            100%{
+                transform: translateX(-100%);
+            }
+        }
+        @keyframes blinkText{
+            0%,100%{
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+        }
+    </style>
+    <title>animation</title>
+</head>
+<body>
+    <div class="blinkText">
+        <p>this is blinking text</p>
+        <br>
+    </div>
+    <div class="scrollText">
+        <br>
+        <p>this is scrollable text</p>
+    </div>
+</body>
+</html>

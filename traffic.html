@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .traffic-lights{
+            width: 100px;
+            height: 300px;
+            border: 5px solid black;
+            border-radius: 2rem;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .light{
+            width: 30px;
+            height: 30px;
+            padding: 2rem;
+            border-radius: 10rem;
+        }
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+        .green{
+            background-color: green;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <title>traffic light</title>
+</head>
+<body>
+    <h1>TRAFFIC LIGHT</h1><br>
+    <div class="traffic-lights">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+</body>
+<script>
+    const redLight=document.querySelector('.red');
+    const yellowLight=document.querySelector('.yellow');
+    const greenLight=document.querySelector('.green');
+    function changeLights(){
+        setTimeout(()=>{
+            redLight.style.backgroundColor='red';
+            yellowLight.style.backgroundColor='transparent';
+            greenLight.style.backgroundColor='transparent';
+            setTimeout(()=>{
+            redLight.style.backgroundColor='transparent';
+            yellowLight.style.backgroundColor='yellow';
+            greenLight.style.backgroundColor='transparent';
+            setTimeout(()=>{
+            redLight.style.backgroundColor='transparent';
+            yellowLight.style.backgroundColor='transparent';
+            greenLight.style.backgroundColor='green';
+            changeLights();
+            },2000);
+            },1000);
+        },2000);
+    }
+        changeLights();
+</script>
+</html>
